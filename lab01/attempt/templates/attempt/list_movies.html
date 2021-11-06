@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random</title> 
+</head>
+<body>
+    <table>
+       
+        <tr>
+            <th>Movie Name</th>
+            <th>Director</th>
+            <th>Release Year</th>
+        </tr>
+        
+        
+
+
+        {% for movie in movies %}
+        <tr>
+            <td>{{ movie.Name }}</td>
+            <td>{{movie.Director}}</td>
+            <td>{{movie.Release_Year}}</td>
+            <td>
+                <a class="" href="{% url 'attempt:movie-details' movie.id %}">View</a>
+                
+
+                    <a class="" href="{% url 'attempt:movie-update' movie.id %}">Update</a>
+                    <a class="" href="{% url 'attempt:movie-delete' movie.id %}">Delete</a>
+        
+
+                
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+ 
+</body>
